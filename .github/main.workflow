@@ -1,7 +1,8 @@
-workflow "New workflow" {
+workflow "Main" {
   on = "push"
   resolves = ["Hello World"]
 }
+
 
 action "Hello World" {
   uses = "./action-a"
