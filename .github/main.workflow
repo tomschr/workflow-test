@@ -6,6 +6,6 @@ workflow "Triage" {
 
 action "Comment On New Issues" {
   uses = "actions/github@v1.0.0"
-  args = "comment "Hello World" --action=opened"
+  args = ["comment "Hello World" --action=opened"]
   secrets = ["GITHUB_TOKEN"]
 }
