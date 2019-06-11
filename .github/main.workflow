@@ -1,13 +1,11 @@
-workflow "Main" {
-  on = "push"
-  resolves = ["Hello World"]
+workflow "Triage" {
+  on = "issue"
+  resolves = ["Comment On New Issues"]
 }
 
 
-action "Hello World" {
-  uses = "./action-a"
-  env = {
-    MY_NAME = "Tux"
-  }
-  args = "\"Hello world, I'm $MY_NAME!\""
+action "Comment On New Issues" {
+  uses = "actions/github@v1.0.0"
+  args = "comment "Hello World" --action=opened" # Only when issues are opened!
+  secrets = ["GITHUB_TOKEN"]
 }
