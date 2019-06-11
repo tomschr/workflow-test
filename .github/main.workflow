@@ -1,5 +1,5 @@
 workflow "Triage" {
-  on = "issue"
+  on = "issue_comment"
   resolves = ["Comment On New Issues"]
 }
 
